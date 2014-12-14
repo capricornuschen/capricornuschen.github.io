@@ -1,0 +1,272 @@
+<!doctype html>
+        <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+        <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+        <!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
+        <!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+        <head>
+                <!-- META TAGS -->
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <title>Knowledge Base Theme</title>
+
+                <link rel="shortcut icon" href="images/favicon.png" />
+
+				<style>
+                  .div-inline{
+                    float:left;
+                    padding-top: 25px;
+                    padding-right: 30px;
+                    padding-bottom: 25px;
+                    padding-left: 90px;
+                    }
+                  /* ---- Table ---- */
+                
+                table {
+                    border-collapse:collapse;
+                    margin-bottom:15px;
+                    width:90%;
+                    }
+                    
+                    caption {
+                        text-align:left;
+                        font-size:15px;
+                        padding-bottom:10px;
+                        }
+                    
+                    table td,
+                    table th {
+                        padding:5px;
+                        border:1px solid #fff;
+                        border-width:0 1px 1px 0;
+                        }
+                        
+                    thead th {
+                        background:#91c5d4;
+                        }
+                            
+                        thead th[colspan],
+                        thead th[rowspan] {
+                            background:#66a9bd;
+                            }
+                        
+                    tbody th,
+                    tfoot th {
+                        text-align:left;
+                        background:#91c5d4;
+                        }
+                        
+                    tbody td,
+                    tfoot td {
+                        text-align:center;
+                        background:#d5eaf0;
+                        }
+                        
+                    tfoot th {
+                        background:#b0cc7f;
+                        }
+                        
+                    tfoot td {
+                        background:#d7e1c5;
+                        font-weight:bold;
+                        }
+                            
+                    tbody tr.odd td { 
+                        background:#bcd9e1;
+                        }
+                </style>
+                
+
+                <!-- Style Sheet-->
+                <link rel="stylesheet" href="style.css"/>
+                <link rel='stylesheet' id='bootstrap-css-css'  href='css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
+                <link rel='stylesheet' id='responsive-css-css'  href='css/responsive5152.css?ver=1.0' type='text/css' media='all' />
+                <link rel='stylesheet' id='pretty-photo-css-css'  href='js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
+                <link rel='stylesheet' id='main-css-css'  href='css/main5152.css?ver=1.0' type='text/css' media='all' />
+                <link rel='stylesheet' id='custom-css-css'  href='css/custom5152.html?ver=1.0' type='text/css' media='all' />
+
+<script>
+function showUser(str) {
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","querybytimeid.php?id="+str,true);
+        xmlhttp.send();
+    }
+}
+</script>
+
+        </head>
+
+        <body>
+
+                <!-- Start of Header -->
+                <div class="header-wrapper">
+                        <header>
+                                <div class="container">
+
+
+                                        <div class="logo-container">
+                                                <!-- Website Logo -->
+                                                <a href="index-2.html"  title="Knowledge Base Theme">
+                                                        <!--<img src="images/logo.png" alt="Knowledge Base Theme"> -->
+                                                </a>
+                                                <span class="tag-line">Project 662 Web Page</span>
+                                        </div>
+
+
+                                        <!-- Start of Main Navigation -->
+                                        <nav class="main-nav">
+                                                <div class="menu-top-menu-container">
+                                                        <ul id="menu-top-menu" class="clearfix">
+																<li><a href="#">Select</a>
+                                                                        <ul class="sub-menu">
+                                                                                <li><a href="selectbytime.html">Select By Time</a></li>
+                                                                                <li><a href="selectbySP.html">Select By Settlement Point</a></li>
+                                                                                <li><a href="selectbyregion.html">Select By Region</a></li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li><a href="insert.html">Insert</a></li>
+                                                                <li><a href="delete.html">Delete</a></li>
+                                                                <li><a href="index.html">General</a></li>
+     
+                                                        </ul>
+                                                </div>
+                                        </nav>
+                                        <!-- End of Main Navigation -->
+
+                                </div>
+                        </header>
+                </div>
+                <!-- End of Header -->
+
+                <!-- Start of Search Wrapper -->
+                <div class="search-area-wrapper">
+                        <div class="search-area container">
+                                <h3 class="search-header">Sorry, your record deletion was failed!</h3>
+                                <p class="search-tag-line">Please input your deletion again</p>
+                                <div class = "div-inline">
+                                 <form id="search-form1" class="search-form clearfix" method="get" action="delete.php" autocomplete="off">
+                                        <input class="search-term required" type="text" id="DName" name="Name" placeholder="Type SP name here" title="* Please enter a SP name here!" />
+                                        <input class="search-btn" type="submit" value="Delete" />
+                                        <div id="search-error-container"></div>
+                                </form>
+                                  </div>
+                                
+                        </div>
+                </div>
+                <!-- End of Search Wrapper -->
+
+                <!-- Start of Page Container -->
+                <div class="page-container">
+                        <div class="container">
+                                <div class="row">
+
+                                        <!-- start of page content -->
+                                        <div class="span8 page-content">
+
+                                                <article class="type-page hentry clearfix">
+                                                        <h1 class="post-title">
+                                                                <a href="#">Search Result</a>
+                                                        </h1>
+                                                        <hr>
+                                                        <div id="txtHint"><b>Anson123</b></div> <br> <br> <br> <br> <br> <br>
+                                                </article>
+
+
+                                                
+                                        </div>
+                                        <!-- end of page content -->
+
+
+                                        <!-- start of sidebar -->
+                                        <aside class="span4 page-sidebar">
+
+                                                <section class="widget">
+                                                        <div class="support-widget">
+                                                        <h3 class="post-title">
+                                                           <a id = "mapbtn" href="#">Contour Map</a>
+                                                        </h3>
+                                                        </div>
+                                                </section>
+
+                                                
+
+                                        </aside>
+                                        <!-- end of sidebar -->
+                                </div>
+                        </div>
+                </div>
+                <!-- End of Page Container -->
+
+                <!-- Start of Footer -->
+                <footer id="footer-wrapper">
+                        <div id="footer" class="container">
+                                <div class="row">
+
+                                        <div class="span3">
+                                             
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- end of #footer -->
+
+                        <!-- Footer Bottom -->
+                        <div id="footer-bottom-wrapper">
+                                <div id="footer-bottom" class="container">
+                                        <div class="row">
+                                                <div class="span6">
+                                                        <p class="copyright">
+                                                                Copyright © 2013. All Rights Reserved by Anson.
+                                                        </p>
+                                                </div>
+                                                <div class="span6">
+                                                        <!-- Social Navigation -->
+                                                        <ul class="social-nav clearfix">
+                                                                <li class="linkedin"><a target="_blank" href="#"></a></li>
+                                                                <li class="stumble"><a target="_blank" href="#"></a></li>
+                                                                <li class="google"><a target="_blank" href="#"></a></li>
+                                                                <li class="deviantart"><a target="_blank" href="#"></a></li>
+                                                                <li class="flickr"><a target="_blank" href="#"></a></li>
+                                                                <li class="skype"><a target="_blank" href="skype:#?call"></a></li>
+                                                                <li class="rss"><a target="_blank" href="#"></a></li>
+                                                                <li class="twitter"><a target="_blank" href="#"></a></li>
+                                                                <li class="facebook"><a target="_blank" href="#"></a></li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- End of Footer Bottom -->
+
+                </footer>
+                <!-- End of Footer -->
+
+                <a href="#top" id="scroll-top"></a>
+
+                <!-- script -->
+                <script type='text/javascript' src='js/jquery-1.8.3.min.js'></script>
+                <script type='text/javascript' src='js/jquery.easing.1.34e44.js?ver=1.3'></script>
+                <script type='text/javascript' src='js/prettyphoto/jquery.prettyPhotoaeb9.js?ver=3.1.4'></script>
+                <script type='text/javascript' src='js/jquery.liveSearchd5f7.js?ver=2.0'></script>
+				<script type='text/javascript' src='js/jflickrfeed.js'></script>
+                <script type='text/javascript' src='js/jquery.formd471.js?ver=3.18'></script>
+                <script type='text/javascript' src='js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
+                <script type='text/javascript' src='js/custom5152.js?ver=1.0'></script>
+
+        </body>
+</html>
+
